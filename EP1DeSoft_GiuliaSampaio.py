@@ -1,15 +1,16 @@
 import random 
 
 jogando = True
-pass_line_bet = False
-point = False
-field = False
-any_craps = False
-twelve = False
 
 fichas = 500
 
 while jogando == True:
+
+    pass_line_bet = False
+    point = False
+    field = False
+    any_craps = False
+    twelve = False
 
     resp = input("Apostar ou sair do jogo? ")
 
@@ -51,18 +52,15 @@ while jogando == True:
             dado = random.randint(2,12)
             print("Você tirou {0}".format(dado))
 
-
             if dado == 2 or dado == 3 or dado == 12:
                 fichas = fichas - valor
                 print("Você perdeu! Agora você tem {0} fichas =(".format(fichas))
                 pass_line_bet = False
-                point = False
 
             if dado == 7 or dado == 11:
                 fichas = fichas + valor
                 print("Você ganhou! Agora você tem {0} fichas =)".format(fichas))
                 pass_line_bet = False
-                point = False
 
             else:
                 point = True
