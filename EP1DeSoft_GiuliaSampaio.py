@@ -38,29 +38,23 @@ while jogando == True:
         if aposta == "pass line bet":
             pass_line_bet = True
 
-        if aposta == "field":
-            field = True
-
-        if aposta == "any craps":
-            any_craps = True
-
-        if aposta == "twelve":
-            twelve = True
-
         while pass_line_bet == True:
 
             dado = random.randint(2,12)
             print("Você tirou {0}".format(dado))
 
+
             if dado == 2 or dado == 3 or dado == 12:
                 fichas = fichas - valor
                 print("Você perdeu! Agora você tem {0} fichas =(".format(fichas))
                 pass_line_bet = False
+                point = False
 
             if dado == 7 or dado == 11:
                 fichas = fichas + valor
                 print("Você ganhou! Agora você tem {0} fichas =)".format(fichas))
                 pass_line_bet = False
+                point = False
 
             else:
                 point = True
@@ -86,6 +80,9 @@ while jogando == True:
                     else:
                         print("Os dados serão jogados novamente...")
 
+        if aposta == "field":
+            field = True
+
         while field == True:
 
             dado = random.randint(2,12)
@@ -110,7 +107,10 @@ while jogando == True:
                 fichas = valor + 3*valor
                 print("Você ganhou! Agora você tem {0} =)".format(fichas))
                 field = False 
-                
+
+        if aposta == "any craps":
+            any_craps = True
+               
         while any_craps == True:
 
             dado = random.randint(2,12)
@@ -124,7 +124,11 @@ while jogando == True:
             else:
                 fichas = fichas - valor
                 print("Você perdeu! Agora você tem {0} fichas =(".format(fichas))
-                any_craps = False  
+                any_craps = False 
+
+
+        if aposta == "twelve":
+            twelve = True 
 
         while twelve == True:
 
