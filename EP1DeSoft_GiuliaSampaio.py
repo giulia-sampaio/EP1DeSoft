@@ -43,7 +43,6 @@ while jogando == True:
             dado = random.randint(2,12)
             print("Você tirou {0}".format(dado))
 
-
             if dado == 2 or dado == 3 or dado == 12:
                 fichas = fichas - valor
                 print("Você perdeu! Agora você tem {0} fichas =(".format(fichas))
@@ -125,7 +124,6 @@ while jogando == True:
                 fichas = fichas - valor
                 print("Você perdeu! Agora você tem {0} fichas =(".format(fichas))
                 any_craps = False 
-
 
         if aposta == "twelve":
             twelve = True 
